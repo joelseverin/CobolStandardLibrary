@@ -23,9 +23,8 @@ template<std::size_t L> struct ByteArray {
         }
 };
 
-class Number {
-    int x();
-};
+template<std::size_t N>
+using Filler = ByteArray<N>;
 
 template<std::size_t Integers,
         std::size_t Decimals = 0,
@@ -43,6 +42,7 @@ struct PackedFormattedNumber;
 
 #include "FormattedNumber.h"
 #include "PackedFormattedNumber.h"
+#include "PIC.h"
 
 #endif /* COBOLSTANDARDLIBRARY_H */
 

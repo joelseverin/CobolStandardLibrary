@@ -107,9 +107,17 @@ struct PackedFormattedNumber {
             return lhs;
         }
         
-        void print() {
+        operator std::string() const {
+            return static_cast<FormattedNumber<Integers, Decimals, Sign>>(*this);
+        }
+        
+        operator double() const {
+            return static_cast<FormattedNumber<Integers, Decimals, Sign>>(*this);
+        }
+        
+        void display() {
             FormattedNumber<Integers, Decimals, Sign> unpacked(*this);
-            unpacked.print();
+            unpacked.display();
         }
 };
 

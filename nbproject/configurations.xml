@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>CobolStandardLibrary.h</itemPath>
       <itemPath>FormattedNumber.h</itemPath>
+      <itemPath>PIC.h</itemPath>
       <itemPath>PackedFormattedNumber.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -39,12 +40,15 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <commandLine>-std=c++11</commandLine>
           <warningLevel>2</warningLevel>
         </ccTool>
       </compileType>
       <item path="CobolStandardLibrary.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="FormattedNumber.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PIC.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="PackedFormattedNumber.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -74,6 +78,8 @@
       <item path="CobolStandardLibrary.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="FormattedNumber.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PIC.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="PackedFormattedNumber.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -1,6 +1,9 @@
 #ifndef FORMATTEDNUMBER_H
 #define FORMATTEDNUMBER_H
 
+#include <sstream>
+#include <string>
+
 //include "CobolStandardLibrary.h"
 
 namespace cobol {
@@ -132,22 +135,30 @@ struct FormattedNumber {
             return lhs;
         }
         
-        void print() {
-            std::cout << "[";
+        operator std::string() const {
+            std::stringstream buffer;
             
             for(std::size_t i = INTEGERS_START; i <= INTEGERS_END; i++) {
-                std::cout << (data[i] & 0x0F);
+                buffer << (data[i] & 0x0F);
             }
             
             if(Decimals > 0) {
-                std::cout << ".";
+                buffer << ".";
             }
             
             for(std::size_t i = DECIMALS_START; i <= DECIMALS_END; i++) {
-                std::cout << (data[i] & 0x0F);
+                buffer << (data[i] & 0x0F);
             }
             
-            std::cout << "]";
+            return buffer.str();
+        }
+        
+        operator double() const {
+            return std::stod(static_cast<std::string>(*this));
+        }
+        
+        void display() {
+            std::cout << static_cast<std::string>(*this);
             std::cout << std::endl;
         }
 };
